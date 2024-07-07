@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Overlay Hover Example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <ul style="height: 240px;">
+            <li class="infologo"><a href="#megaphone"><img src="https://cdn-icons-png.flaticon.com/512/3651/3651696.png"
+                        alt=""></a></li>
+            <br>
+            <br>
+            <li class="infologo"><a href="#info"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png" alt=""
+                        we></i></a></li>
+            <br>
+            <br>
+            <li class="infologo"><a href="#darkmode" onclick="myFunction()"><img
+                        src="https://cdn-icons-png.freepik.com/512/6714/6714978.png"></i></a></li>
+        </ul>
+        <ul>
+            <li><a href="#facebook"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                        alt="Facebook"></a></li>
+            <li><a href="#instagram"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png"
+                        alt="Instagram"> </a></li>
+            <li><a href="#twitter"><img src="https://w7.pngwing.com/pngs/748/680/png-transparent-twitter-x-logo.png"
+                        alt="Twitter"></a></li>
+            <li><a href="#telegram"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png"
+                        alt="Telegram"></a></li>
+            <li><a href="#whatsapp"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png"
+                        alt="WhatsApp"></a></li>
+            <li><a href="#apple"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png"
+                        alt="Apple"></a></li>
+            <li><a href="#playstore"><img
+                        src="https://freelogopng.com/images/all_img/1664285914google-play-logo-png.png"
+                        alt="Play Store"></a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Khari-bulbul_Barnstar.png/640px-Khari-bulbul_Barnstar.png"
+                style=" display: flex;  position: absolute; width: 50px; left: 187px;  top: 36px;" alt="">
+
+            <div class="animation">
+                <a id="dynamicLink" href="#" class="iconElement">
+                    <span id="icon"></span>
+                    <span id="name"></span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const linkData = [
+            { icon: 'fas fa-bicycle', name: 'Velosibet' },
+            { icon: 'fas fa-chess', name: 'Şahmat' },
+            { icon: 'fas fa-football', name: 'Football' },
+            { icon: 'fas fa-volleyball', name: 'Voleybol' }
+        ];
+
+        let currentIndex = 0;
+
+        function updateLink() {
+            const iconElement = document.getElementById('icon');
+            const nameElement = document.getElementById('name');
+            const dynamicLink = document.getElementById('dynamicLink');
+
+            // Opaklığı sıfıra ayarlayın (görünmez)
+            dynamicLink.style.opacity = 0;
+
+            setTimeout(() => {
+                // Yeni ikon sınıfını ekle
+                iconElement.className = linkData[currentIndex].icon;
+                nameElement.textContent = linkData[currentIndex].name;
+
+                // Opaklığı tekrar 1'e ayarlayın (görünür)
+                dynamicLink.style.opacity = 1;
+
+                currentIndex = (currentIndex + 1) % linkData.length;
+            }, 500); // CSS'teki transition süresine uygun olarak
+        }
+
+        setInterval(updateLink, 1500);
+
+
+
+
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
